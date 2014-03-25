@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block h1 %}Shopping Basket{% endblock %}
+{% block p_lead %}The contents of your basket{% endblock %}
+
+{% block content %}
+
+<div class='container'>
+    <div class='col-xs-12 center whole_buyer buyer'>
+        <div class='col-xs-12 center buyer'>
+            <div class='col-xs-4'>Performance</div>
+            <div class='col-xs-4'>Buyer Type</div>
+            <div class='col-xs-4'>Price</div>
+        </div>
+        {% for item in cart %}
+            <div class='col-xs-12 center buyer'>
+                <div class='col-xs-4'>{{ item.product.performance }}</div>
+                <div class='col-xs-4'>{{ item.product.buyer_type }}</div>
+                <div class='col-xs-4'>{{ item.total_price }}</div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

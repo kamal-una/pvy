@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block h1 %}CRUD{% endblock %}
+{% block p_lead %}{{ performance.description }}{% endblock %}
+{% block content %}
+<a href="{% url 'patron_list' %}">Index</a> | <a href="{% url 'patron_add' %}">Add Patron</a>
+    {% block object_content %}
+    {% endblock %}
+{% endblock %}
+
+

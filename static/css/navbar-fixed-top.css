@@ -1,0 +1,28 @@
+body {
+    padding-top: 70px;
+}
+.center {
+     float: none;
+     margin-left: auto;
+     margin-right: auto;
+}
+.performance {
+    background: #d6d6d6;
+    margin-bottom: 30px;
+    /*border-radius: 6px;*/
+    padding: 1px 20px 1px 20px;
+}
+.buyer{
+    padding: 10px;
+    text-align: center;
+}
+select.selectbuyer {
+    padding: 4px;
+    margin-left: 10px;
+}
+.whole_buyer{
+    border: 10px;
+    background-color: #d6d6d6;
+    border-radius: 6px;
+
+}
