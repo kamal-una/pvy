@@ -1,4 +1,4 @@
-pvy
+PVY
 ===
 
 Ticket sales system written with Django.
