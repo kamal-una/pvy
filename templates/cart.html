@@ -19,6 +19,7 @@
                 <div class='col-xs-4'>{{ item.total_price }}</div>
             </div>
         {% endfor %}
+        <p><a class="btn btn-primary" href="{% url 'empty_cart' %}" role="button">Empty basket</a></p>
     </div>
 </div>
 {% endblock %}

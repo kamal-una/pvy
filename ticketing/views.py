@@ -16,6 +16,7 @@ def buy(request):
 
 def buy_perf(request, year, performance):
     this_perf = models.getPerformance(year, performance)
+    error = None
 
     if request.method == 'POST':
         data = request.POST
@@ -26,20 +27,29 @@ def buy_perf(request, year, performance):
             buyer = str(price.buyer_type)
             if buyer in data:
                 # for each of these buyer_types lock a seat and add it to the cart
-                for i in range(int(data[buyer])):
-                    seat = this_perf.lock_seat(request.user, price.buyer_type, price.price)
-                    if seat:
-                        cart = Cart(request)
-                        cart.add(seat, price.price, 1)
-
-
-        #models.Transaction.add_cart(data)
+                if int(data[buyer]) < 10:
+                    for i in range(int(data[buyer])):
+                        seat = this_perf.lock_seat(request.user, price.buyer_type, price.price)
+                        if seat:
+                            cart = Cart(request)
+                            cart.add(seat, price.price, 1)
+                else:
+                    error = "Invalid number of seats selected"
 
     html = render(request, 'buy_perf.html', {'performance': this_perf,
                                              'seat_count': models.getSeatCount(year, performance),
-                                             'prices': models.getPrices(this_perf)})
+                                             'prices': models.getPrices(this_perf),
+                                             'error': error})
     return StreamingHttpResponse(html)
 
 
 def get_cart(request):
+    return render(request, 'cart.html', dict(cart=Cart(request)))
+
+
+def empty_cart(request):
+    cart = Cart(request)
+    for item in cart:
+        item.product.unlock_seat(request.user)
+        cart.remove(item.product)
     return render(request, 'cart.html', dict(cart=Cart(request)))

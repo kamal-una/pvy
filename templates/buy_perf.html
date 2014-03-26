@@ -6,12 +6,16 @@
 {% block content %}
 
 <div class='container'>
+    {% if error %}
+        <div class="alert alert-danger">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <h4>{{ error }}</h4>
+        </div>
+    {% endif %}
     <div class='col-md-3 center whole_buyer buyer'>
         <form action="" method="post">
         {% csrf_token %}
-
         <div class='col-md-12 center buyer'>{{ seat_count }} tickets available</div>
-
         {% for price in prices %}
             <div class='col-md-12 center buyer'>
                 {{ price.buyer_type }} £{{ price.price }}

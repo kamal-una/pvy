@@ -184,24 +184,9 @@ class Performance(models.Model):
 
     def lock_seat(self, user, buyer, price):
         # find an available seat...
-        print self.year
-        print self.performance
-
         seat = self.seat_set.filter(status=0).first()
         if seat:
-            # make a new transaction
-            transaction = Transaction()
-            transaction.user = user
-            transaction.save()
-
-            # set the primary key to none, so we clone the seat record
-            #seat.pk = None
-            # mark the seat as locked
-            seat.transaction = transaction
-            seat.status = Seat.LOCKED
-            seat.buyer_type = buyer
-            seat.price = price
-            seat.save()
+            seat = seat.lock_seat(user, buyer, price)
             return seat
 
         return None
@@ -241,6 +226,31 @@ class Seat(models.Model):
     package = models.ForeignKey(Package, null=True)
 
     history = HistoricalRecords()
+
+    def lock_seat(self, user, buyer, price):
+        # make a new transaction
+        transaction = Transaction(user=user)
+        transaction.save()
+
+        # mark the seat as locked
+        self.transaction = transaction
+        self.status = Seat.LOCKED
+        self.buyer_type = buyer
+        self.price = price
+        self.save()
+        return self
+
+    def unlock_seat(self, user):
+        # make a new transaction
+        transaction = Transaction(user=user)
+        transaction.save()
+
+        self.transaction = transaction
+        self.status = Seat.AVAILABLE
+        self.buyer_type = None
+        self.price = 0
+        self.save()
+
 
     def __unicode__(self):
         return str(self.performance) + " - " + str(self.transaction) + " - " + str(self.seat)
