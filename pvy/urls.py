@@ -13,6 +13,8 @@ urlpatterns = patterns(
 
     url(r'^cart/$', 'ticketing.views.get_cart', name='cart'),
     url(r'^empty_cart/$', 'ticketing.views.empty_cart', name='empty_cart'),
+    url(r'^purchase/$', 'ticketing.views.purchase', name='purchase'),
+    url(r'^confirm/$', 'ticketing.views.confirm', name='confirm'),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),

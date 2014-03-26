@@ -251,6 +251,15 @@ class Seat(models.Model):
         self.price = 0
         self.save()
 
+    def pay_seat(self, user):
+        # make a new transaction
+        transaction = Transaction(user=user)
+        transaction.save()
+
+        self.transaction = transaction
+        self.status = Seat.PAID
+        self.save()
+
 
     def __unicode__(self):
         return str(self.performance) + " - " + str(self.transaction) + " - " + str(self.seat)

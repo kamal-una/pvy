@@ -53,3 +53,16 @@ def empty_cart(request):
         item.product.unlock_seat(request.user)
         cart.remove(item.product)
     return render(request, 'cart.html', dict(cart=Cart(request)))
+
+
+def purchase(request):
+    return render(request, 'purchase.html', dict(cart=Cart(request)))
+
+
+def confirm(request):
+    # mark the seats as paid and remove from cart
+    cart = Cart(request)
+    for item in cart:
+        item.product.pay_seat(request.user)
+        cart.remove(item.product)
+    return render(request, 'confirm.html', dict(cart=Cart(request)))

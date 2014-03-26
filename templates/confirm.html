@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
-{% block h1 %}Shopping Basket{% endblock %}
-{% block p_lead %}The contents of your basket{% endblock %}
+{% block h1 %}Confirmation{% endblock %}
+{% block p_lead %}Confirmation of your payment{% endblock %}
 
 {% block content %}
 
@@ -19,8 +19,6 @@
                 <div class='col-xs-4'>£{{ item.total_price|floatformat:2 }}</div>
             </div>
         {% endfor %}
-        <p><a class="btn btn-primary" href="{% url 'empty_cart' %}" role="button">Empty basket</a></p>
-        <p><a class="btn btn-primary" href="{% url 'purchase' %}" role="button">Buy tickets</a></p>
     </div>
 </div>
 {% endblock %}
