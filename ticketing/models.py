@@ -124,6 +124,11 @@ class Transaction(models.Model):
     user = models.ForeignKey(User, null=True, blank=True)
     date = models.DateTimeField(auto_now_add=True)
 
+    def create(self, user):
+        transaction = Transaction(user=user)
+        transaction.save()
+        return transaction
+
     def __unicode__(self):
         return str(self.id)
 
@@ -227,11 +232,7 @@ class Seat(models.Model):
 
     history = HistoricalRecords()
 
-    def lock_seat(self, user, buyer, price):
-        # make a new transaction
-        transaction = Transaction(user=user)
-        transaction.save()
-
+    def lock_seat(self, transaction, buyer, price):
         # mark the seat as locked
         self.transaction = transaction
         self.status = Seat.LOCKED
@@ -240,26 +241,25 @@ class Seat(models.Model):
         self.save()
         return self
 
-    def unlock_seat(self, user):
+    def unlock_seat(self, transaction):
         # make a new transaction
-        transaction = Transaction(user=user)
-        transaction.save()
+        #transaction = Transaction(user=user)
+        #transaction.save()
 
-        self.transaction = transaction
-        self.status = Seat.AVAILABLE
         self.buyer_type = None
         self.price = 0
-        self.save()
+        self.update_seat(transaction, Seat.AVAILABLE)
 
     def pay_seat(self, user):
         # make a new transaction
         transaction = Transaction(user=user)
         transaction.save()
+        self.update_seat(transaction, Seat.PAID)
 
+    def update_seat(self, transaction, status):
         self.transaction = transaction
-        self.status = Seat.PAID
+        self.status = status
         self.save()
-
 
     def __unicode__(self):
         return str(self.performance) + " - " + str(self.transaction) + " - " + str(self.seat)
@@ -286,3 +286,8 @@ def getPrices(performance):
 
 def getPerformances():
     return Performance.objects.filter(publish__exact=True)
+
+def create_transaction(user):
+    transaction = Transaction(user=user)
+    transaction.save()
+    return transaction

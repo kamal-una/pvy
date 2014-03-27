@@ -12,7 +12,7 @@ body {
     /*border-radius: 6px;*/
     padding: 1px 20px 1px 20px;
 }
-.buyer{
+.buyer {
     padding: 10px;
     text-align: center;
 }
@@ -20,9 +20,12 @@ select.selectbuyer {
     padding: 4px;
     margin-left: 10px;
 }
-.whole_buyer{
+.whole_buyer {
     border: 10px;
     background-color: #d6d6d6;
     border-radius: 6px;
-
+}
+.cart {
+    padding: 5px;
+    text-align: center;
 }

@@ -23,13 +23,16 @@ def buy_perf(request, year, performance):
         available_prices = models.getPrices(this_perf)
 
         # go through the available prices and see what the user has requested
+        # make a new transaction
+        transaction = models.create_transaction(request.user)
+
         for price in available_prices:
             buyer = str(price.buyer_type)
             if buyer in data:
                 # for each of these buyer_types lock a seat and add it to the cart
                 if int(data[buyer]) < 10:
                     for i in range(int(data[buyer])):
-                        seat = this_perf.lock_seat(request.user, price.buyer_type, price.price)
+                        seat = this_perf.lock_seat(transaction, price.buyer_type, price.price)
                         if seat:
                             cart = Cart(request)
                             cart.add(seat, price.price, 1)
@@ -49,8 +52,10 @@ def get_cart(request):
 
 def empty_cart(request):
     cart = Cart(request)
+    transaction = models.create_transaction(request.user)
+
     for item in cart:
-        item.product.unlock_seat(request.user)
+        item.product.unlock_seat(transaction)
         cart.remove(item.product)
     return render(request, 'cart.html', dict(cart=Cart(request)))
 
@@ -62,7 +67,9 @@ def purchase(request):
 def confirm(request):
     # mark the seats as paid and remove from cart
     cart = Cart(request)
+    transaction = models.create_transaction(request.user)
+
     for item in cart:
-        item.product.pay_seat(request.user)
+        item.product.pay_seat(transaction)
         cart.remove(item.product)
     return render(request, 'confirm.html', dict(cart=Cart(request)))

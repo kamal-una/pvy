@@ -23,19 +23,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="admin.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ticketing/admin.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="0" selection-start="1061" selection-end="1061" vertical-scroll-proportion="0.0" vertical-offset="374" max-vertical-offset="1598">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pvy/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="47" selection-start="638" selection-end="645" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
+            <state line="16" column="47" selection-start="638" selection-end="645" vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="510">
               <folding />
             </state>
           </provider>
@@ -44,10 +35,8 @@
       <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ticketing/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="31" selection-start="1179" selection-end="1179" vertical-scroll-proportion="6.28" vertical-offset="701" max-vertical-offset="1241">
-              <folding>
-                <element signature="e#26#61#0" expanded="true" />
-              </folding>
+            <state line="72" column="41" selection-start="2511" selection-end="2511" vertical-scroll-proportion="0.0" vertical-offset="537" max-vertical-offset="1292">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -55,7 +44,7 @@
       <file leaf-file-name="confirm.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/confirm.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="0" selection-start="788" selection-end="788" vertical-scroll-proportion="-13.730769" vertical-offset="0" max-vertical-offset="493">
+            <state line="21" column="0" selection-start="788" selection-end="788" vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="493">
               <folding />
             </state>
           </provider>
@@ -64,7 +53,7 @@
       <file leaf-file-name="purchase.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/purchase.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="14" selection-start="0" selection-end="912" vertical-scroll-proportion="-15.692307" vertical-offset="0" max-vertical-offset="510">
+            <state line="24" column="14" selection-start="0" selection-end="912" vertical-scroll-proportion="0.0" vertical-offset="408" max-vertical-offset="510">
               <folding />
             </state>
           </provider>
@@ -73,16 +62,25 @@
       <file leaf-file-name="base.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="32" selection-start="591" selection-end="591" vertical-scroll-proportion="-0.0" vertical-offset="221" max-vertical-offset="986">
+            <state line="13" column="32" selection-start="591" selection-end="591" vertical-scroll-proportion="0.0" vertical-offset="221" max-vertical-offset="986">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="cart.html" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="cart.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/cart.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="8" selection-start="901" selection-end="901" vertical-scroll-proportion="-14.384615" vertical-offset="0" max-vertical-offset="527">
+            <state line="12" column="37" selection-start="423" selection-end="423" vertical-scroll-proportion="0.35416666" vertical-offset="0" max-vertical-offset="576">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="navbar-fixed-top.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/css/navbar-fixed-top.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="28" column="14" selection-start="468" selection-end="468" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="612">
               <folding />
             </state>
           </provider>
@@ -100,16 +98,16 @@
       <file leaf-file-name="buy.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/buy.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="16" selection-start="412" selection-end="547" vertical-scroll-proportion="-7.1923075" vertical-offset="0" max-vertical-offset="357">
+            <state line="11" column="16" selection-start="412" selection-end="547" vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="357">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="models.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ticketing/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="260" column="0" selection-start="7823" selection-end="7823" vertical-scroll-proportion="1.5666667" vertical-offset="3523" max-vertical-offset="4930">
+            <state line="292" column="22" selection-start="8950" selection-end="8950" vertical-scroll-proportion="0.0" vertical-offset="4379" max-vertical-offset="5015">
               <folding />
             </state>
           </provider>
@@ -136,10 +134,11 @@
         <option value="$PROJECT_DIR$/templates/payment_page.html" />
         <option value="$PROJECT_DIR$/pvy/urls.py" />
         <option value="$PROJECT_DIR$/templates/purchase.html" />
-        <option value="$PROJECT_DIR$/templates/cart.html" />
-        <option value="$PROJECT_DIR$/ticketing/models.py" />
         <option value="$PROJECT_DIR$/templates/confirm.html" />
+        <option value="$PROJECT_DIR$/ticketing/models.py" />
         <option value="$PROJECT_DIR$/ticketing/views.py" />
+        <option value="$PROJECT_DIR$/static/css/navbar-fixed-top.css" />
+        <option value="$PROJECT_DIR$/templates/cart.html" />
       </list>
     </option>
   </component>
@@ -231,6 +230,38 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pvy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pvy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pvy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pvy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="pvy" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -253,7 +284,7 @@
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
-      <PyConsoleSettings />
+      <console-settings />
     </option>
   </component>
   <component name="RecentsManager">
@@ -308,23 +339,6 @@
       <option name="USE_KEYWORD" value="false" />
       <method />
     </configuration>
-    <configuration default="true" type="Python.AppEngineServer" factoryName="App Engine server">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="pvy" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="launchJavascriptDebuger" value="false" />
-      <option name="host" value="" />
-      <option name="browserUrl" value="" />
-      <option name="additionalOptions" value="" />
-      <method />
-    </configuration>
     <configuration default="true" type="tests" factoryName="Nosetests">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -347,6 +361,23 @@
       <option name="USE_PARAM" value="false" />
       <method />
     </configuration>
+    <configuration default="true" type="Python.AppEngineServer" factoryName="App Engine server">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="pvy" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="host" value="" />
+      <option name="browserUrl" value="" />
+      <option name="additionalOptions" value="" />
+      <method />
+    </configuration>
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -364,7 +395,27 @@
       <option name="PARAMETERS" value="" />
       <method />
     </configuration>
-    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
+    <configuration default="true" type="Python.DjangoServer" factoryName="Django server">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="pvy" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
       <method />
     </configuration>
     <configuration default="true" type="tests" factoryName="Unittests">
@@ -390,27 +441,7 @@
       <option name="USE_PARAM" value="false" />
       <method />
     </configuration>
-    <configuration default="true" type="Python.DjangoServer" factoryName="Django server">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="pvy" />
-      <option name="launchJavascriptDebuger" value="false" />
-      <option name="port" value="8000" />
-      <option name="host" value="" />
-      <option name="additionalOptions" value="" />
-      <option name="browserUrl" value="" />
-      <option name="runTestServer" value="false" />
-      <option name="runNoReload" value="false" />
-      <option name="useCustomRunCommand" value="false" />
-      <option name="customRunCommand" value="" />
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
       <method />
     </configuration>
     <configuration default="true" type="tests" factoryName="Doctests">
@@ -481,7 +512,9 @@
       <option name="runNoReload" value="false" />
       <option name="useCustomRunCommand" value="false" />
       <option name="customRunCommand" value="" />
+      <RunnerSettings RunnerId="PyDebugRunner" />
       <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PyDebugRunner" />
       <ConfigurationWrapper RunnerId="PythonRunner" />
       <method />
     </configuration>
@@ -524,19 +557,19 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16347177" sideWeight="0.56487024" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16506922" sideWeight="0.56487024" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39961758" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.43499044" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.43499044" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -553,14 +586,84 @@
     </option>
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/pvy/Lib/site-packages/django/utils/importlib.py">
+    <entry file="file://$PROJECT_DIR$/ticketing/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="0" selection-start="1326" selection-end="1326" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="799">
+        <state line="22" column="0" selection-start="1061" selection-end="1061" vertical-scroll-proportion="0.0" vertical-offset="374" max-vertical-offset="1598">
           <folding />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pvy/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="47" selection-start="638" selection-end="645" vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="510">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ticketing/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="31" selection-start="1179" selection-end="1179" vertical-scroll-proportion="0.0" vertical-offset="701" max-vertical-offset="1241">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/confirm.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="0" selection-start="788" selection-end="788" vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="493">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/purchase.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="14" selection-start="0" selection-end="912" vertical-scroll-proportion="0.0" vertical-offset="408" max-vertical-offset="510">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="32" selection-start="591" selection-end="591" vertical-scroll-proportion="0.0" vertical-offset="221" max-vertical-offset="986">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/cart.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="8" selection-start="901" selection-end="901" vertical-scroll-proportion="0.0" vertical-offset="374" max-vertical-offset="527">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/buy_perf.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="68" selection-start="751" selection-end="751" vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="867">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/buy.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="16" selection-start="412" selection-end="547" vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="357">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ticketing/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="260" column="0" selection-start="7823" selection-end="7823" vertical-scroll-proportion="0.0" vertical-offset="4420" max-vertical-offset="4930">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/pvy/Lib/site-packages/django/utils/importlib.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="0" selection-start="1326" selection-end="1326" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="799" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pvy/settings.py">
@@ -587,9 +690,7 @@
     <entry file="file://$PROJECT_DIR$/ticketing/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="27" column="82" selection-start="938" selection-end="938" vertical-scroll-proportion="0.0" vertical-offset="459" max-vertical-offset="850">
-          <folding>
-            <element signature="e#26#61#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -656,9 +757,7 @@
     </entry>
     <entry file="file://$USER_HOME$/pvy/Lib/site-packages/django/utils/importlib.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="0" selection-start="1326" selection-end="1326" vertical-scroll-proportion="0.0" vertical-offset="339" max-vertical-offset="765">
-          <folding />
-        </state>
+        <state line="39" column="0" selection-start="1326" selection-end="1326" vertical-scroll-proportion="0.0" vertical-offset="339" max-vertical-offset="765" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ticketing/admin.py">
@@ -687,7 +786,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/buy.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="16" selection-start="412" selection-end="547" vertical-scroll-proportion="-7.1923075" vertical-offset="0" max-vertical-offset="357">
+        <state line="11" column="16" selection-start="412" selection-end="547" vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="357">
           <folding />
         </state>
       </provider>
@@ -699,13 +798,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/buy_perf.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="68" selection-start="751" selection-end="751" vertical-scroll-proportion="-11.115385" vertical-offset="51" max-vertical-offset="867">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pvy/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="16" column="47" selection-start="638" selection-end="645" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
@@ -713,39 +805,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/cart.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="8" selection-start="901" selection-end="901" vertical-scroll-proportion="-14.384615" vertical-offset="0" max-vertical-offset="527">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/purchase.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="14" selection-start="0" selection-end="912" vertical-scroll-proportion="-15.692307" vertical-offset="0" max-vertical-offset="510">
+        <state line="24" column="14" selection-start="0" selection-end="912" vertical-scroll-proportion="0.0" vertical-offset="408" max-vertical-offset="510">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/confirm.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="0" selection-start="788" selection-end="788" vertical-scroll-proportion="-13.730769" vertical-offset="0" max-vertical-offset="493">
+        <state line="21" column="0" selection-start="788" selection-end="788" vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="493">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/buy_perf.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="68" selection-start="751" selection-end="751" vertical-scroll-proportion="-11.115385" vertical-offset="51" max-vertical-offset="867">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ticketing/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="292" column="22" selection-start="8950" selection-end="8950" vertical-scroll-proportion="0.0" vertical-offset="4379" max-vertical-offset="5015">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ticketing/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="31" selection-start="1179" selection-end="1179" vertical-scroll-proportion="6.28" vertical-offset="701" max-vertical-offset="1241">
-          <folding>
-            <element signature="e#26#61#0" expanded="true" />
-          </folding>
+        <state line="72" column="41" selection-start="2511" selection-end="2511" vertical-scroll-proportion="0.0" vertical-offset="537" max-vertical-offset="1292">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ticketing/models.py">
+    <entry file="file://$PROJECT_DIR$/static/css/navbar-fixed-top.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="260" column="0" selection-start="7823" selection-end="7823" vertical-scroll-proportion="1.5666667" vertical-offset="3523" max-vertical-offset="4930">
+        <state line="28" column="14" selection-start="468" selection-end="468" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="612">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/cart.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="37" selection-start="423" selection-end="423" vertical-scroll-proportion="0.35416666" vertical-offset="0" max-vertical-offset="576">
           <folding />
         </state>
       </provider>

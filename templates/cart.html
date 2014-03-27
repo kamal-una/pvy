@@ -6,21 +6,23 @@
 {% block content %}
 
 <div class='container'>
-    <div class='col-xs-12 center whole_buyer buyer'>
-        <div class='col-xs-12 center buyer'>
-            <div class='col-xs-4'>Performance</div>
-            <div class='col-xs-4'>Buyer Type</div>
-            <div class='col-xs-4'>Price</div>
+    <div class='col-xs-12 center whole_buyer cart'>
+        <div class='col-xs-12 center cart'>
+            <div class='col-xs-4 cart'>Performance</div>
+            <div class='col-xs-4 cart'>Buyer Type</div>
+            <div class='col-xs-4 cart'>Price</div>
         </div>
         {% for item in cart %}
-            <div class='col-xs-12 center buyer'>
-                <div class='col-xs-4'>{{ item.product.performance }}</div>
-                <div class='col-xs-4'>{{ item.product.buyer_type }}</div>
-                <div class='col-xs-4'>£{{ item.total_price|floatformat:2 }}</div>
+            <div class='col-xs-12 center cart'>
+                <div class='col-xs-4 cart'>{{ item.product.performance }}</div>
+                <div class='col-xs-4 cart'>{{ item.product.buyer_type }}</div>
+                <div class='col-xs-4 cart'>£{{ item.total_price|floatformat:2 }}</div>
             </div>
         {% endfor %}
-        <p><a class="btn btn-primary" href="{% url 'empty_cart' %}" role="button">Empty basket</a></p>
-        <p><a class="btn btn-primary" href="{% url 'purchase' %}" role="button">Buy tickets</a></p>
+        {% if cart %}
+            <p><a class="btn btn-primary" href="{% url 'empty_cart' %}" role="button">Empty basket</a></p>
+            <p><a class="btn btn-primary" href="{% url 'purchase' %}" role="button">Buy tickets</a></p>
+        {% endif %}
     </div>
 </div>
 {% endblock %}
