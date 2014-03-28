@@ -233,27 +233,17 @@ class Seat(models.Model):
     history = HistoricalRecords()
 
     def lock_seat(self, transaction, buyer, price):
-        # mark the seat as locked
-        self.transaction = transaction
-        self.status = Seat.LOCKED
         self.buyer_type = buyer
         self.price = price
-        self.save()
+        self.update_seat(transaction, Seat.LOCKED)
         return self
 
     def unlock_seat(self, transaction):
-        # make a new transaction
-        #transaction = Transaction(user=user)
-        #transaction.save()
-
         self.buyer_type = None
         self.price = 0
         self.update_seat(transaction, Seat.AVAILABLE)
 
-    def pay_seat(self, user):
-        # make a new transaction
-        transaction = Transaction(user=user)
-        transaction.save()
+    def pay_seat(self, transaction):
         self.update_seat(transaction, Seat.PAID)
 
     def update_seat(self, transaction, status):
@@ -268,26 +258,30 @@ class Seat(models.Model):
         ordering = ['performance', 'transaction', 'seat']
 
 
-def getSeatCount(year, performance):
+def get_seat_count(year, performance):
     seats_count = Seat.objects.filter(performance__year__exact=year, performance__performance__exact=performance).filter(status=0).count()
     return seats_count
 
 
-def getPerformance(year, performance):
+def get_performance(year, performance):
     performance = Performance.objects.get(year__exact=year, performance__exact=performance, publish__exact=True)
     return performance
 
 
-def getPrices(performance):
+def get_prices(performance):
     buyer = BuyerType.objects.filter(performance=performance.pk)
     prices = Price.objects.filter(price_map__exact=performance.price_map).filter(buyer_type=buyer).select_related('buyer_type')
     return prices
 
 
-def getPerformances():
+def get_performances():
     return Performance.objects.filter(publish__exact=True)
 
+
 def create_transaction(user):
-    transaction = Transaction(user=user)
+    if user.is_authenticated():
+        transaction = Transaction(user=user)
+    else:
+        transaction = Transaction()
     transaction.save()
     return transaction

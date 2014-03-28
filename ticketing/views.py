@@ -1,5 +1,5 @@
 # Create your views here.
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.template.loader import get_template
 from django.template import Context
 from django.http import StreamingHttpResponse
@@ -7,20 +7,21 @@ from ticketing import models
 from cart import Cart
 
 
+
 def buy(request):
     t = get_template('buy.html')
-    performance = models.getPerformances()
+    performance = models.get_performances()
     html = render(request, 'buy.html', {'performances': performance})
     return StreamingHttpResponse(html)
 
 
 def buy_perf(request, year, performance):
-    this_perf = models.getPerformance(year, performance)
+    this_perf = models.get_performance(year, performance)
     error = None
 
     if request.method == 'POST':
         data = request.POST
-        available_prices = models.getPrices(this_perf)
+        available_prices = models.get_prices(this_perf)
 
         # go through the available prices and see what the user has requested
         # make a new transaction
@@ -40,8 +41,8 @@ def buy_perf(request, year, performance):
                     error = "Invalid number of seats selected"
 
     html = render(request, 'buy_perf.html', {'performance': this_perf,
-                                             'seat_count': models.getSeatCount(year, performance),
-                                             'prices': models.getPrices(this_perf),
+                                             'seat_count': models.get_seat_count(year, performance),
+                                             'prices': models.get_prices(this_perf),
                                              'error': error})
     return StreamingHttpResponse(html)
 
@@ -61,6 +62,8 @@ def empty_cart(request):
 
 
 def purchase(request):
+    if not request.user.is_authenticated():
+        return redirect('login', redirect='purchase')
     return render(request, 'purchase.html', dict(cart=Cart(request)))
 
 
