@@ -5,7 +5,10 @@ from django.template import Context
 from django.http import StreamingHttpResponse
 from ticketing import models
 from cart import Cart
-
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.forms import UserCreationForm
+from django.http import HttpResponseRedirect
+from forms import UserForm
 
 
 def buy(request):
@@ -61,9 +64,8 @@ def empty_cart(request):
     return render(request, 'cart.html', dict(cart=Cart(request)))
 
 
+@login_required
 def purchase(request):
-    if not request.user.is_authenticated():
-        return redirect('login', redirect='purchase')
     return render(request, 'purchase.html', dict(cart=Cart(request)))
 
 
@@ -73,6 +75,21 @@ def confirm(request):
     transaction = models.create_transaction(request.user)
 
     for item in cart:
-        item.product.pay_seat(transaction)
+        item.product.pay_seat(transaction, request.user)
         cart.remove(item.product)
     return render(request, 'confirm.html', dict(cart=Cart(request)))
+
+
+def register(request):
+    if request.method == 'POST':
+        form = UserForm(request.POST)
+        if form.is_valid():
+            new_user = form.save()
+            return HttpResponseRedirect('/buy')
+        else:
+            print "form not valid!"
+    else:
+        form = UserForm()
+    return render(request, "register.html", {
+        'form': form,
+    })

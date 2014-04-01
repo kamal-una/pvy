@@ -1,5 +1,5 @@
 from django.contrib import admin
-from ticketing.models import System, Patron, Event, Performance, PaymentType, BuyerType, Package, Transaction, Seat, \
+from ticketing.models import System, CustomUser, Event, Performance, PaymentType, BuyerType, Package, Transaction, Seat, \
     Facility, SeatedFacilitySeat, Price, PriceMap
 
 
@@ -15,10 +15,10 @@ class PerformanceAdmin(admin.ModelAdmin):
     list_filter = ('date', 'created', 'last_update')
 
 
-class PatronAdmin(admin.ModelAdmin):
-    list_display = ('id', 'title', 'first_name', 'last_name', 'email', 'created', 'last_update')
+class CustomUserAdmin(admin.ModelAdmin):
+    list_display = ('email', 'title', 'first_name', 'last_name', 'date_joined', 'last_update')
     search_fields = ('first_name', 'last_name', 'email')
-    list_filter = ('created', 'last_update')
+    list_filter = ('date_joined', 'last_update')
 
 
 class BuyerAdmin(admin.ModelAdmin):
@@ -44,7 +44,7 @@ class PaymentTypeAdmin(admin.ModelAdmin):
 
 
 class SeatAdmin(admin.ModelAdmin):
-    list_display = ('id', 'seat', 'performance', 'status', 'transaction', 'buyer_type', 'payment_type', 'patron')
+    list_display = ('id', 'seat', 'performance', 'status', 'transaction', 'buyer_type', 'payment_type', 'user')
     search_fields = ('id', 'seat__section', 'seat__row', 'seat__seat', 'status')
 
 
@@ -74,7 +74,7 @@ class PriceMapAdmin(admin.ModelAdmin):
     search_fields = ('price_map',)
 
 admin.site.register(System)
-admin.site.register(Patron, PatronAdmin)
+admin.site.register(CustomUser, CustomUserAdmin)
 admin.site.register(Event, EventAdmin)
 admin.site.register(Performance, PerformanceAdmin)
 admin.site.register(PaymentType, PaymentTypeAdmin)

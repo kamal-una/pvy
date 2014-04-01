@@ -167,4 +167,6 @@ LOGGING = {
 
 LOGIN_URL = 'login'
 LOGOUT_URL = 'logout'
-LOGIN_REDIRECT_URL = 'cart'
+LOGIN_REDIRECT_URL = 'buy'
+CRISPY_TEMPLATE_PACK='bootstrap3'
+AUTH_USER_MODEL = 'ticketing.CustomUser'
