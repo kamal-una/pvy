@@ -9,7 +9,7 @@ urlpatterns = patterns(
     '',
     url(r'^$', 'ticketing.views.buy'),
     url(r'^buy/$', 'ticketing.views.buy', name='buy'),
-    url(r'^buy/(?P<year>\d{4})/(?P<performance>\w+)/$', 'ticketing.views.buy_perf', name='buy_perf'),
+    url(r'^buy/(?P<performance>\w+)/$', 'ticketing.views.buy_perf', name='buy_perf'),
 
     url(r'^cart/$', 'ticketing.views.get_cart', name='cart'),
     url(r'^empty_cart/$', 'ticketing.views.empty_cart', name='empty_cart'),

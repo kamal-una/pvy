@@ -1,5 +1,5 @@
 from django.contrib import admin
-from ticketing.models import System, CustomUser, Event, Performance, PaymentType, BuyerType, Package, Transaction, Seat, \
+from ticketing.models import System, CustomUser, Performance, PaymentType, BuyerType, Transaction, Seat, \
     Facility, SeatedFacilitySeat, Price, PriceMap
 
 
@@ -7,11 +7,11 @@ class PerformanceAdmin(admin.ModelAdmin):
     def save_model(self, request, obj, form, change):
         obj.user = request.user
         obj.save()
-    fields = ('year', 'performance', 'description', 'date', 'event', 'facility', 'buyer_types',
+    fields = ('performance', 'description', 'date', 'facility', 'buyer_types',
               'sale_start', 'sale_end', 'price_map', 'publish')
-    list_display = ('performance', 'year', 'description', 'date', 'event', 'facility', 'created', 'last_update',
+    list_display = ('performance', 'description', 'date', 'facility', 'created', 'last_update',
                     'sale_start', 'sale_end', 'price_map', 'publish')
-    search_fields = ('year', 'performance', 'description', 'event__event')
+    search_fields = ('performance', 'description')
     list_filter = ('date', 'created', 'last_update')
 
 
@@ -24,12 +24,6 @@ class CustomUserAdmin(admin.ModelAdmin):
 class BuyerAdmin(admin.ModelAdmin):
     list_display = ('buyer_type', 'description')
     search_fields = ('buyer_type', 'description')
-
-
-class EventAdmin(admin.ModelAdmin):
-    list_display = ('year', 'event', 'description', 'created', 'last_update')
-    search_fields = ('year', 'event', 'description')
-    list_filter = ('created', 'last_update')
 
 
 class FacilityAdmin(admin.ModelAdmin):
@@ -75,11 +69,9 @@ class PriceMapAdmin(admin.ModelAdmin):
 
 admin.site.register(System)
 admin.site.register(CustomUser, CustomUserAdmin)
-admin.site.register(Event, EventAdmin)
 admin.site.register(Performance, PerformanceAdmin)
 admin.site.register(PaymentType, PaymentTypeAdmin)
 admin.site.register(BuyerType, BuyerAdmin)
-admin.site.register(Package)
 admin.site.register(Transaction, TransactionAdmin)
 admin.site.register(Seat, SeatAdmin)
 admin.site.register(Facility, FacilityAdmin)

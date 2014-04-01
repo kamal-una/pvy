@@ -9,7 +9,7 @@
             <div class="col-md-11 performance center">
                 <h2>{{ performance.performance }}</h2>
                 <p>{{ performance.description }}</p>
-                <p><a class="btn btn-primary" href="{% url 'buy_perf' performance.year performance.performance %}" role="button">View details »</a></p>
+                <p><a class="btn btn-primary" href="{% url 'buy_perf' performance.performance %}" role="button">View details »</a></p>
             </div>
         </div>
     {% endfor %}

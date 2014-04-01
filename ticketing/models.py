@@ -149,28 +149,6 @@ class Patron_Phone(models.Model):
         ordering = ['type']
 
 
-class Event(models.Model):
-    year = models.IntegerField()
-    event = models.CharField(max_length=100)
-    description = models.TextField()
-    created = models.DateField(auto_now_add=True)
-    last_update = models.DateField(auto_now=True)
-
-    def __unicode__(self):
-        return self.event
-
-    class Meta:
-        ordering = ['year', 'event']
-
-
-class Package(models.Model):
-    package = models.CharField(max_length=100)
-    description = models.TextField()
-
-    def __unicode__(self):
-        return self.package
-
-
 class BuyerType(models.Model):
     buyer_type = models.CharField(max_length=100)
     description = models.TextField()
@@ -218,13 +196,11 @@ class Price(models.Model):
 
 
 class Performance(models.Model):
-    year = models.IntegerField()
     performance = models.CharField(max_length=100)
     description = models.TextField()
     date = models.DateField()
     created = models.DateField(auto_now_add=True)
     last_update = models.DateField(auto_now=True)
-    event = models.ForeignKey(Event)
     facility = models.ForeignKey(Facility)
     user = models.ForeignKey(CustomUser)
     buyer_types = models.ManyToManyField(BuyerType, blank=True)
@@ -264,10 +240,10 @@ class Performance(models.Model):
         return None
 
     def __unicode__(self):
-        return str(self.year) + " - " + self.performance
+        return self.performance
 
     class Meta:
-        ordering = ['year', 'performance']
+        ordering = ['performance']
 
 
 class Seat(models.Model):
@@ -295,7 +271,6 @@ class Seat(models.Model):
     user = models.ForeignKey(CustomUser, null=True)
     price = models.DecimalField(max_digits=8, decimal_places=2)
     payment_amount = models.DecimalField(max_digits=8, decimal_places=2, null=True)
-    package = models.ForeignKey(Package, null=True)
 
     history = HistoricalRecords()
 
@@ -327,13 +302,13 @@ class Seat(models.Model):
         ordering = ['performance', 'transaction', 'seat']
 
 
-def get_seat_count(year, performance):
-    seats_count = Seat.objects.filter(performance__year__exact=year, performance__performance__exact=performance).filter(status=0).count()
+def get_seat_count(performance):
+    seats_count = Seat.objects.filter(performance__performance__exact=performance).filter(status=0).count()
     return seats_count
 
 
-def get_performance(year, performance):
-    performance = Performance.objects.get(year__exact=year, performance__exact=performance, publish__exact=True)
+def get_performance(performance):
+    performance = Performance.objects.get(performance__exact=performance, publish__exact=True)
     return performance
 
 

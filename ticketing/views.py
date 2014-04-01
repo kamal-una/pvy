@@ -1,14 +1,12 @@
 # Create your views here.
 from django.shortcuts import render, redirect
 from django.template.loader import get_template
-from django.template import Context
 from django.http import StreamingHttpResponse
 from ticketing import models
 from cart import Cart
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.forms import UserCreationForm
-from django.http import HttpResponseRedirect
 from forms import UserForm
+from django.contrib.auth import authenticate, login
 
 
 def buy(request):
@@ -18,18 +16,19 @@ def buy(request):
     return StreamingHttpResponse(html)
 
 
-def buy_perf(request, year, performance):
-    this_perf = models.get_performance(year, performance)
+def buy_perf(request, performance):
+    this_perf = models.get_performance(performance)
     error = None
 
     if request.method == 'POST':
         data = request.POST
         available_prices = models.get_prices(this_perf)
 
-        # go through the available prices and see what the user has requested
         # make a new transaction
         transaction = models.create_transaction(request.user)
+        redirect_to_cart = False
 
+        # go through the available prices and see what the user has requested
         for price in available_prices:
             buyer = str(price.buyer_type)
             if buyer in data:
@@ -40,11 +39,16 @@ def buy_perf(request, year, performance):
                         if seat:
                             cart = Cart(request)
                             cart.add(seat, price.price, 1)
+                            redirect_to_cart = True
                 else:
                     error = "Invalid number of seats selected"
 
+        # only redirect to the cart if we have added some seats
+        if redirect_to_cart:
+            return redirect('cart')
+
     html = render(request, 'buy_perf.html', {'performance': this_perf,
-                                             'seat_count': models.get_seat_count(year, performance),
+                                             'seat_count': models.get_seat_count(performance),
                                              'prices': models.get_prices(this_perf),
                                              'error': error})
     return StreamingHttpResponse(html)
@@ -85,7 +89,11 @@ def register(request):
         form = UserForm(request.POST)
         if form.is_valid():
             new_user = form.save()
-            return HttpResponseRedirect('/buy')
+            print request.POST['password']
+            new_user = authenticate(username=new_user.email, password=request.POST['password'])
+            if new_user:
+                login(request, new_user)
+                return redirect('cart')
         else:
             print "form not valid!"
     else:
