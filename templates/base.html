@@ -21,7 +21,7 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="{% url 'buy' %}">Buy</a></li>
+            <li><a href="{% url 'buy' %}">Buy</a></li>
             <li><a href="{% url 'cart' %}">Basket</a></li>
             {% if user.is_staff %}
                 <li><a href="/admin">Admin</a></li>
