@@ -312,6 +312,16 @@ def get_performance(performance):
     return performance
 
 
+def get_seat(seat):
+    seat = Seat.objects.get(id=seat)
+    return seat
+
+
+def get_seats(performance):
+    seats = Seat.objects.filter(performance=performance).order_by('seat')
+    return seats
+
+
 def get_prices(performance):
     buyer = BuyerType.objects.filter(performance=performance.pk)
     prices = Price.objects.filter(price_map__exact=performance.price_map).filter(buyer_type=buyer).select_related('buyer_type')
@@ -322,6 +332,10 @@ def get_performances():
     return Performance.objects.filter(publish__exact=True)
 
 
+def get_report_performances():
+    return Performance.objects.all()
+
+
 def create_transaction(user):
     if user.is_authenticated():
         transaction = Transaction(user=user)
@@ -329,3 +343,4 @@ def create_transaction(user):
         transaction = Transaction()
     transaction.save()
     return transaction
+

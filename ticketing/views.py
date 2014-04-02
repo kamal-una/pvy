@@ -6,11 +6,10 @@ from ticketing import models
 from cart import Cart
 from django.contrib.auth.decorators import login_required
 from forms import UserForm
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 
 
 def buy(request):
-    t = get_template('buy.html')
     performance = models.get_performances()
     html = render(request, 'buy.html', {'performances': performance})
     return StreamingHttpResponse(html)
@@ -89,7 +88,6 @@ def register(request):
         form = UserForm(request.POST)
         if form.is_valid():
             new_user = form.save()
-            print request.POST['password']
             new_user = authenticate(username=new_user.email, password=request.POST['password'])
             if new_user:
                 login(request, new_user)
@@ -98,6 +96,36 @@ def register(request):
             print "form not valid!"
     else:
         form = UserForm()
-    return render(request, "register.html", {
-        'form': form,
-    })
+    return render(request, "register.html", {'form': form})
+
+
+@login_required
+def account(request):
+    if request.method == 'POST':
+        form = UserForm(request.POST, instance=request.user)
+        if form.is_valid():
+            new_user = form.save()
+    form = UserForm(instance=request.user)
+    return render(request, "account.html", {'form': form})
+
+
+def user_logout(request):
+    # empty the cart
+    cart = Cart(request)
+    transaction = models.create_transaction(request.user)
+    for item in cart:
+        item.product.unlock_seat(transaction)
+        cart.remove(item.product)
+    logout(request)
+    return redirect('login')
+
+
+def refund_seat(request, seat):
+    this_seat = models.get_seat(seat)
+    transaction = models.create_transaction(request.user)
+    # in real life, we can't just unlock the seat, we would have to refund the payment etc...
+    this_seat.user = None
+    this_seat.unlock_seat(transaction)
+
+    # direct back to the report for this seat
+    return redirect('report_perf', this_seat.performance)

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block h1 %}Performance Reporting{% endblock %}
+{% block p_lead %}Select a performance to report on{% endblock %}
+
+{% block content %}
+    {% for performance in performances %}
+        <div class="row">
+            <div class="col-md-11 performance center">
+                <h2>{{ performance.performance }}</h2>
+                <p>{{ performance.description }}</p>
+                <p><a class="btn btn-primary" href="{% url 'report_perf' performance.performance %}" role="button">View details »</a></p>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}

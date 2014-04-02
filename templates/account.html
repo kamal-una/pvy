@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block h1 %}Register{% endblock %}
+{% block p_lead %}Fill in your details to sign up{% endblock %}
+
+{% block content %}
+    <div class="col-sm-8 col-sm-offset-2">
+        {% load crispy_forms_tags %}
+        <form role="form" class="form-horizontal" method="post" action="{% url 'account' %}">
+            {% crispy form %}
+        </form>
+    </div>
+{% endblock %}

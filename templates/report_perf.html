@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block h1 %}{{ performance.performance }}{% endblock %}
+{% block p_lead %}{{ performance.description }}{% endblock %}
+
+{% block content %}
+
+<div class='container'>
+    {% if error %}
+        <div class="alert alert-danger">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <h4>{{ error }}</h4>
+        </div>
+    {% endif %}
+    <div class='col-md-12 center'>
+        <table class="table">
+            <tbody class="table-striped">
+                <tr>
+                    <th>ID</th>
+                    <th>Transaction</th>
+                    <th>Status</th>
+                    <th>Section</th>
+                    <th>Row</th>
+                    <th>Seat</th>
+                    <th>Account</th>
+                    <th>Buyer Type</th>
+                    <th>Price</th>
+                    <th>Return</th>
+                </tr>
+                {% for seat in seats %}
+                <tr>
+                    <td>{{ seat.id }}</td>
+                    <td>{{ seat.transaction }}</td>
+                    <td>{{ seat.status }}</td>
+                    <td>{{ seat.seat.section }}</td>
+                    <td>{{ seat.seat.row }}</td>
+                    <td>{{ seat.seat.seat }}</td>
+                    <td>{{ seat.user }}</td>
+                    <td>{{ seat.buyer_type }}</td>
+                    <td>{{ seat.price|floatformat:2  }}</td>
+                    <td><a class="btn btn-default btn-xs" href="{% url 'refund_seat' seat.id %}">Return</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <div class="pagination col-sm-12 text-center">
+            <span class="step-links">
+                {% if seats.has_previous %}
+                    <a class="btn btn-default btn-sm" href="?page={{ seats.previous_page_number }}"><span class="glyphicon glyphicon-chevron-left"></span>Previous</a>
+                {% endif %}
+
+                <span class="current">
+                    Page {{ seats.number }} of {{ seats.paginator.num_pages }}
+                </span>
+
+                {% if seats.has_next %}
+                    <a class="btn btn-default btn-sm" href="?page={{ seats.next_page_number }}"><span class="glyphicon glyphicon-chevron-right"></span>Next</a>
+                {% endif %}
+            </span>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

@@ -23,11 +23,14 @@
           <ul class="nav navbar-nav">
             <li class="active"><a href="{% url 'buy' %}">Buy</a></li>
             <li><a href="{% url 'cart' %}">Basket</a></li>
-            <li><a href="/admin">Admin</a></li>
+            {% if user.is_staff %}
+                <li><a href="/admin">Admin</a></li>
+                <li><a href="{% url 'report' %}">Report</a></li>
+            {% endif %}
           </ul>
           <ul class="nav navbar-nav navbar-right">
             {% if user.is_authenticated %}
-                <li class="active"><a href="./">{{ user.email }}</a></li>
+                <li class="active"><a href="{% url 'account' %}">{{ user.email }}</a></li>
                 <li><a href="{% url 'logout' %}">Sign out</a></li>
             {% else %}
                 <li><a href="{% url 'register' %}">Register</a></li>
