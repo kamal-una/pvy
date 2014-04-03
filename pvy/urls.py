@@ -24,7 +24,7 @@ urlpatterns = patterns(
 urlpatterns += patterns(
     'reporting.views',
     url(r'^report/$', 'report', name='report'),
-    url(r'^report/(?P<performance>\w+)/$', 'report_perf', name='report_perf'),
+    url(r'^report/(?P<performance>[-\w\ ]+)/$', 'report_perf', name='report_perf'),
 )
 
 urlpatterns += patterns(

@@ -6,7 +6,7 @@
 {% block content %}
 
 <div class='container'>
-    <div class='col-xs-12 center whole_buyer cart'>
+    <div class='col-xs-8 center whole_buyer cart'>
         <div class='col-xs-12 center cart'>
             <div class='col-xs-4 cart'>Performance</div>
             <div class='col-xs-4 cart'>Buyer Type</div>
@@ -20,8 +20,14 @@
             </div>
         {% endfor %}
         {% if cart %}
-            <p><a class="btn btn-primary" href="{% url 'empty_cart' %}" role="button">Empty basket</a></p>
-            <p><a class="btn btn-primary" href="{% url 'purchase' %}" role="button">Buy tickets</a></p>
+            <div class='col-xs-12 center cart'>
+                <div class='col-xs-4 cart text-info'><strong>Total</strong></div>
+                <div class='col-xs-4 cart'></div>
+                <div class='col-xs-4 cart text-info'><strong>£{{ total|floatformat:2 }}</strong></div>
+            </div>
+            <div class="">
+                <a class="btn btn-danger" href="{% url 'empty_cart' %}" role="button">Empty basket</a> <a class="btn btn-primary" href="{% url 'purchase' %}" role="button">Buy tickets</a>
+            </div>
         {% endif %}
     </div>
 </div>

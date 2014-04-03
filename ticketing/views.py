@@ -54,7 +54,9 @@ def buy_perf(request, performance):
 
 
 def get_cart(request):
-    return render(request, 'cart.html', dict(cart=Cart(request)))
+    cart = Cart(request)
+    total = total_cart(cart)
+    return render(request, 'cart.html', dict(cart=Cart(request), total=total))
 
 
 def empty_cart(request):
@@ -64,7 +66,7 @@ def empty_cart(request):
     for item in cart:
         item.product.unlock_seat(transaction)
         cart.remove(item.product)
-    return render(request, 'cart.html', dict(cart=Cart(request)))
+    return redirect('cart')
 
 
 @login_required
@@ -129,3 +131,10 @@ def refund_seat(request, seat):
 
     # direct back to the report for this seat
     return redirect('report_perf', this_seat.performance)
+
+
+def total_cart(cart):
+    total = 0
+    for item in cart:
+        total += item.product.price
+    return total
